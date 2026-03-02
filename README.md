@@ -34,32 +34,36 @@ pip install -r requirements-dev.txt
 
 ```bash
 # Desde CSV
-python generate.py data/ejemplo_cappi.csv -p "CAPPI Edificio Principal"
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI Edificio Principal"
 
 # Filtrar por disciplina
-python generate.py data/ejemplo_cappi.csv -p "CAPPI" -d Arquitectura
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI" -d Arquitectura
 
 # Desde archivo IFC
-python generate.py modelo.ifc -p "CAPPI Edificio Principal"
+python src/generate.py modelo.ifc -p "CAPPI Edificio Principal"
 
 # Solo generar sitio (sin PDF)
-python generate.py data/ejemplo_cappi.csv -p "CAPPI" --no-pdf
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI" --no-pdf
 
 # Ver disciplinas disponibles
-python generate.py --list-disciplines
+python src/generate.py --list-disciplines
 ```
 
 ## Estructura del proyecto
 
 ```
 porqueViven/
-  generate.py          # Script principal
+  src/
+    generate.py        # Script principal
   templates/
     element.html       # Ficha del elemento (movil)
     index.html         # Indice con buscador y filtros
     404.html           # Pagina de error
   data/
     ejemplo_cappi.csv  # Datos de ejemplo
+  docs/
+    manual.md          # Manual de usuario
+    capturas/          # Screenshots de verificacion
   output/              # Generado (gitignored)
     site/              # HTML estatico para Firebase
     pdf/               # PDFs con etiquetas QR
@@ -102,6 +106,8 @@ El script genera automaticamente `firebase.json` con la configuracion correcta.
 ```bash
 python -m pytest tests/ -v
 ```
+
+Para mas detalles, ver [docs/manual.md](docs/manual.md).
 
 ## Licencia
 

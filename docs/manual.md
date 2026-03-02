@@ -71,7 +71,7 @@ pip install -r requirements.txt
 ## Paso 3: Ejecutar el generador
 
 ```bash
-python generate.py ruta/al/archivo.csv -p "CAPPI Edificio Principal"
+python src/generate.py ruta/al/archivo.csv -p "CAPPI Edificio Principal"
 ```
 
 **Opciones disponibles:**
@@ -89,16 +89,16 @@ python generate.py ruta/al/archivo.csv -p "CAPPI Edificio Principal"
 
 ```bash
 # Generar todo desde CSV
-python generate.py data/ejemplo_cappi.csv -p "CAPPI Edificio Principal"
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI Edificio Principal"
 
 # Solo elementos de Arquitectura
-python generate.py data/ejemplo_cappi.csv -p "CAPPI" -d Arquitectura
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI" -d Arquitectura
 
 # Desde archivo IFC
-python generate.py modelo.ifc -p "CAPPI Edificio Principal"
+python src/generate.py modelo.ifc -p "CAPPI Edificio Principal"
 
 # Solo generar sitio web (sin PDF)
-python generate.py data/ejemplo_cappi.csv -p "CAPPI" --no-pdf
+python src/generate.py data/ejemplo_cappi.csv -p "CAPPI" --no-pdf
 ```
 
 ## Paso 4: Revisar lo generado

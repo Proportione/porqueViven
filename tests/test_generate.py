@@ -4,7 +4,7 @@ import sys
 
 import pytest
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 
 from generate import (
     Element,
@@ -300,6 +300,17 @@ class TestGenerateSite:
         assert "PA001" in html
         assert "VE001" in html
         assert "PI001" in html
+
+    def test_element_has_valid_breadcrumb_schema(self, sample_csv, tmp_dir, monkeypatch):
+        """BreadcrumbList incluye item en todos los ListItem."""
+        site = self._setup(tmp_dir, monkeypatch)
+        elements = parse_csv(sample_csv)
+        generate_site(elements, "Test Project", base_url="https://bim.porqueviven.org")
+        html = (site / "e" / "PA001" / "index.html").read_text()
+        assert '"@type": "BreadcrumbList"' in html
+        assert '"name": "Inicio"' in html
+        assert '"item": "https://bim.porqueviven.org/"' in html
+        assert '"item": "https://bim.porqueviven.org/e/PA001/"' in html
 
     def test_site_large_dataset(self, large_csv, tmp_dir, monkeypatch):
         """Generacion con 120 elementos."""

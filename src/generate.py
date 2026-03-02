@@ -3,10 +3,10 @@
 Generador de QR para elementos BIM - porqueViven.org
 
 Uso:
-    python generate.py data/elementos.csv --project "CAPPI Edificio"
-    python generate.py data/modelo.ifc --project "CAPPI Edificio"
-    python generate.py data/elementos.csv -p "CAPPI" -d Arquitectura
-    python generate.py --list-disciplines
+    python src/generate.py data/elementos.csv --project "CAPPI Edificio"
+    python src/generate.py data/modelo.ifc --project "CAPPI Edificio"
+    python src/generate.py data/elementos.csv -p "CAPPI" -d Arquitectura
+    python src/generate.py --list-disciplines
 
 Genera:
     output/pdf/  - PDFs con etiquetas QR para imprimir
@@ -352,7 +352,7 @@ def parse_ifc(path: str, discipline_override: str = None) -> list[Element]:
 # ─── HTML generation ──────────────────────────────────────────────────────────
 
 
-def generate_site(elements: list[Element], project_name: str):
+def generate_site(elements: list[Element], project_name: str, base_url: str = BASE_URL):
     """Genera páginas HTML estáticas para cada elemento."""
     if not TEMPLATE_DIR.exists():
         raise FileNotFoundError(
@@ -375,7 +375,7 @@ def generate_site(elements: list[Element], project_name: str):
     for el in elements:
         el_dir = SITE_DIR / "e" / el.marca
         el_dir.mkdir(parents=True, exist_ok=True)
-        html = tpl.render(element=el, project_name=project_name)
+        html = tpl.render(element=el, project_name=project_name, base_url=base_url)
         (el_dir / "index.html").write_text(html, encoding="utf-8")
 
     # 404 page
@@ -396,6 +396,7 @@ def generate_site(elements: list[Element], project_name: str):
         elements=sorted_elements,
         project_name=project_name,
         discipline_counts=dict(sorted(disc_counts.items())),
+        base_url=base_url,
     )
     (SITE_DIR / "index.html").write_text(html, encoding="utf-8")
 
@@ -631,9 +632,9 @@ def main():
         description="Generador de QR para elementos BIM - porqueViven.org",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""Ejemplos:
-  python generate.py data/elementos.csv -p "CAPPI Edificio"
-  python generate.py data/modelo.ifc -p "CAPPI" -d Arquitectura
-  python generate.py --list-disciplines""",
+  python src/generate.py data/elementos.csv -p "CAPPI Edificio"
+  python src/generate.py data/modelo.ifc -p "CAPPI" -d Arquitectura
+  python src/generate.py --list-disciplines""",
     )
     parser.add_argument("input", nargs="?", help="Archivo CSV, Excel (.xlsx) o IFC")
     parser.add_argument("--project", "-p", help="Nombre del proyecto")
