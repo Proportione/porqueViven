@@ -14,3 +14,19 @@ build/
 .pytest_cache/
 *.log
 docs/capturas/
+
+# Screenshots y snapshots de trabajo (Playwright, QA, debugging)
+*.png
+.playwright-mcp/
+ads-*/
+qa_e2e_*/
+ads-*.yml
+scripts.json
+form-script.txt
+
+# Proyectos paralelos (repos independientes o sandboxes)
+gestion-usuarios/
+plataforma-educacion-gamificada/
+robot-mascota/
+docs/actas/
+docs/novedades-*.html

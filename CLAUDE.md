@@ -66,3 +66,13 @@ output/
 - Branding porqueViven aplicado a HTML y PDF
 - NO desplegado en la nube (pendiente Firebase Hosting en bim.porqueviven.org)
 - Repo: github.com/javiercuervo/porqueViven (publico)
+
+## QA y cumplimiento de requisitos
+
+Este proyecto sigue el framework QA de Proportione.
+Referencia: `/code/QA_Proportione/whitepaper/WHITEPAPER.md`
+
+### Obligatorio antes de merge/deploy
+- Ejecutar `/deep-review` en cada PR
+- Ejecutar `/check-security` antes de deploy a producción
+- Tests: `python3 -m pytest tests/ -v` (56 tests, deben pasar todos)
