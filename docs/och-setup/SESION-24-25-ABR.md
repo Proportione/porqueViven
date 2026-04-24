@@ -28,6 +28,8 @@ Dos días de trabajo tras la reunión semanal con Mónica. Todo documentado, rep
 ### Sábado 25-Abr (cerrado)
 
 - **S1 Whitepaper HIS v0.1** → 13 secciones, 2.600 palabras aprox. Sección 9 (procesos internos) queda placeholder hasta recibir los 55 procesos de Ana el lunes 27. v0.2 prevista miércoles 29.
+- **D1 pre-entregado (domingo adelantado)** → Copy completo de la landing "Inicio al duelo" en `docs/landings/formacion-inicio-al-duelo.md`. 10 bloques, SEO, Schema.org Course, formulario de captación. Solo queda maquetar en Elementor.
+- **L2 + M1 + M2 pre-entregado (lun-mar adelantados)** → Copy completo del producto WC "Farmacias que cuidan" + landing + QR + flyer A5 + pegatina en `docs/landings/farmacias-que-cuidan.md`. Basado en doc oficial de Mónica (id `1rrObEBC...`). Formulario de adhesión con 12 campos (NIF, colegio farmacéutico, provincia...), 3 vías de pago con Bizum preferente.
 
 
 ## Pendientes del usuario
