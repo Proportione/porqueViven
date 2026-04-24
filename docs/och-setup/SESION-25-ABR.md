@@ -1,6 +1,6 @@
 # Sesión 25 abr 2026 — resumen de cierre
 
-Sábado largo: cierre del plan 6 días, acta Talent Class, whitepaper HIS, copy de las dos landings, diagnóstico Ads, cierre Stackby fase 1.
+Sábado largo: cierre del plan 6 días, acta Talent Class, whitepaper HIS, copy de las dos landings, diagnóstico Ads.
 
 
 ## Entregables del día
@@ -16,7 +16,6 @@ Sábado largo: cierre del plan 6 días, acta Talent Class, whitepaper HIS, copy 
 | 7 | 18 tareas Upbase creadas + prioridades normalizadas | Upbase lista `Porqueviven WEB & ARQ` (id `2boyTNv65mex62fZjMPiJ`) |
 | 8 | 3 drafts Gmail a `soporte@porqueviven.org` (Mónica Stripe, Cristina CNAME+marca+WhatsApp, Alfredo BIM CSV) | Gmail borradores |
 | 9 | Tab **FinOps** en BI dashboard `bi.proportione.com/porqueViven` | `/IT Proportione/Dashboard/pages/4_porqueViven.py` (deploy pendiente) |
-| 10 | Cierre Stackby fase 1: memoria + 20 docs con banner de deprecación | 5 repos (IT Proportione, IITD, Wordpress, OpenClaw, Ventas y Mkt) |
 
 
 ## Tareas ejecutadas
@@ -44,7 +43,6 @@ Sábado largo: cierre del plan 6 días, acta Talent Class, whitepaper HIS, copy 
 - Task tracker Upbase: 5 tareas V+S marcadas completadas.
 - 3 drafts Gmail internos creados para ingesta automática a tickets Firestore.
 - Diagnóstico Ads y plan para 28-abr (Ismael) + 1-may (transcripciones Talent).
-- Cierre Stackby fase 1: MEMORY.md + sesión 16-abr + 20 docs con banner "Nota abril 2026 — Stackby deprecado".
 
 
 ## Pendientes del usuario
@@ -57,8 +55,7 @@ Sábado largo: cierre del plan 6 días, acta Talent Class, whitepaper HIS, copy 
      --service-account=proportione-backup-executor@automation-brain.iam.gserviceaccount.com \
      --min-instances=0 --max-instances=1 --memory=512Mi --cpu=1 --port=8080 --quiet
    ```
-3. **Revisar y commit** los 20 archivos con banner de deprecación Stackby (están en repos externos a porqueViven).
-4. **Revisar 2 drafts Gmail** pendientes (Alfredo, CNAME GoDaddy) — enviar directamente a sus destinatarios.
+3. **Revisar 2 drafts Gmail** pendientes (Alfredo, CNAME GoDaddy) — enviar directamente a sus destinatarios.
 
 
 ## Bloqueantes externos vigilados
@@ -91,7 +88,7 @@ branch activa:  main
 
 - **Completadas hoy:** 12 tareas
 - **En progreso:** #5 (CNAME), #24 (landing formación)
-- **Pendientes con bloqueo externo:** #2 (Stripe), #19 (farmacéuticos — inicio lunes), #20 (IAM — lunes), #23 (BIM — Alfredo), #34 (Stackby fase 2)
+- **Pendientes con bloqueo externo:** #2 (Stripe), #19 (farmacéuticos — inicio lunes), #20 (IAM — lunes), #23 (BIM — Alfredo)
 
 
 — Sesión cerrada limpia. Good night.
