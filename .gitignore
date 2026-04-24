@@ -17,12 +17,23 @@ docs/capturas/
 
 # Screenshots y snapshots de trabajo (Playwright, QA, debugging)
 *.png
+*.jpg
+*.jpeg
+*.svg
 .playwright-mcp/
 ads-*/
 qa_e2e_*/
 ads-*.yml
 scripts.json
 form-script.txt
+
+# Snapshots intermedios Playwright (muy verbosos, no aportan valor en git)
+docs/och-setup/snapshot-*.yml
+snapshot-*.yml
+*.yml.save
+mu-plugins-propuestos/
+scripts/
+*.yml
 
 # Proyectos paralelos (repos independientes o sandboxes)
 gestion-usuarios/
