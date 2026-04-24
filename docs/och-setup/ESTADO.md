@@ -1,4 +1,4 @@
-# OCH cursos.porqueviven.org — estado final 23-abr-2026 23:40h
+# OCH cursos.porqueviven.org — estado 24-abr-2026 10:20h (tras reunión Mónica)
 
 ## URLs
 
@@ -94,9 +94,10 @@
 - Textos traducidos: Se entrega a · Por haber completado la formación · Emitido el · Válido hasta · ID de certificado
 - Nota: "…impartida por la Fundación porqueViven. Se emite con fines de reconocimiento, no sustituye a una titulación oficial. CIF G86801099 · porqueviven.org"
 
-### Dominio custom — BLOQUEADO por ubicación del DNS
+### Dominio custom — BLOQUEADO por DNS en GoDaddy
 - `cursos.porqueviven.org` solicitado en OCH (AWS ACM)
-- **Issue encontrado 24-Abr 05:00h**: Los NS autoritativos de `porqueviven.org` son de **GoDaddy** (`ns51.domaincontrol.com`, `ns52.domaincontrol.com`), NO de SiteGround.
+- **24-Abr 10:00h**: Draft de correo a Mónica (cc Cristina + Mayte) pidiendo acceso al panel GoDaddy para crear el CNAME. Gmail draft `r-8658775937534020822`.
+- **Issue**: Los NS autoritativos de `porqueviven.org` son de **GoDaddy** (`ns51.domaincontrol.com`, `ns52.domaincontrol.com`), NO de SiteGround.
 - El CNAME creado en SiteGround Zone Editor no tiene efecto porque GoDaddy es quien responde las consultas públicas.
 - **Acción pendiente (usuario)**: añadir el CNAME en panel de GoDaddy DNS:
   - Tipo: `CNAME`
@@ -137,3 +138,18 @@
 - **Precio píldora duelo**: 19,90 € donativo (del 20€ acordado 27-Mar, ajustado a 19,90 por petición usuario)
 - **SECPAL**: piloto gratis, contenido expandible cuando SECPAL confirme catálogo
 - **CTA lenguaje**: "Donar ahora / Confirmar donativo" en vez de "Pagar" por naturaleza fundación
+
+## Novedades tras reunión Mónica 24-Abr-2026
+
+- Acta cerrada y fusionada en un único documento: `20260424 Reunion semanal MONICA` (ID `1WxvGWV47488nrWTL2CBN0D6xAk4jg4cRLrCSWN7mhoI`), en `Mi unidad / 01 Proyectos / 02 PorqueViven / 01 Actas`. Incluye sección F con cronograma 6 días.
+- **Modelo donación <20 %** (acta C.6): el curso "Inicio al duelo" (19,90 €) queda enmarcado como donación. La landing de captación en porqueviven.org lo redactará así. Investigación pendiente: modelo Fundación IE + EOI.
+- **Stripe bloqueado por datos Mónica** (representante legal): 19,90 € no se podrá cobrar hasta que ella facilite DNI, fecha nacimiento y domicilio. Tenant OCH sigue en Draft hasta entonces.
+- **18 tareas creadas en Upbase** (lista "Porqueviven WEB & ARQ") con el cronograma 24-29 abr, dependencias marcadas en la descripción.
+- **Correo a Alfredo (draft Gmail `r-1225126256476823572`)** pidiendo CSV Revit — desbloquea prueba BIM QR del miércoles 29.
+- **Correo a Mónica/Cristina/Mayte (draft Gmail `r-8658775937534020822`)** con instrucciones del CNAME en GoDaddy.
+
+## BI Dashboard porqueViven (bi.proportione.com/porqueViven)
+
+- Tab **FinOps** añadido en `/IT Proportione/Dashboard/pages/4_porqueViven.py` — muestra gasto GCP con nota explicativa de compartición con automation-brain.
+- Pendiente deploy: `cd "/Users/javiercuervolopez/code/IT Proportione/Dashboard" && gcloud auth login && gcloud run deploy proportione-bi --project=automation-brain --region=europe-west1 --source=. --service-account=proportione-backup-executor@automation-brain.iam.gserviceaccount.com --min-instances=0 --max-instances=1 --memory=512Mi --cpu=1 --port=8080 --quiet`
+- Decisión futura: migrar recursos porqueViven a proyecto GCP dedicado (HIS/GIS lo hará obligatorio) o etiquetar con `client=porqueviven`.
